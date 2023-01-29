@@ -5,7 +5,7 @@ import buildspaceLogo from "../assets/buildspace-logo.png";
 
 const Home = () => {
   // Create state property
-  const maxRetries = 20;
+  const maxRetries = 50;
   const [input, setInput] = useState("");
   const [img, setImg] = useState("");
 

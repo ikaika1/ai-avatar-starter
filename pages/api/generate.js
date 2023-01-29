@@ -10,7 +10,8 @@ const bufferToBase64 = (buffer) => {
 const generateAction = async (req, res) => {
     console.log("Received request");
 
-    const input = JSON.parse(req.body).input; // going to input from the body of the request
+    const { finalInput } = JSON.parse(req.body); // going to input from the body of the request
+    console.log(req.body)
 
     const response = await fetch( // fetching request to Hugging face
         `https://api-inference.huggingface.co/models/ikaikaens/sd-raza`,
@@ -21,7 +22,7 @@ const generateAction = async (req, res) => {
             },
             method: "POST",
             body: JSON.stringify({
-                inputs: input,
+                inputs: finalInput,
             }),
         }
     );
